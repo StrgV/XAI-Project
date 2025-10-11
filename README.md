@@ -19,6 +19,6 @@
     - Basierend auf den Antworten des Modells können dann verschiedene Daten evaluiert werden 
         - "Richtigkeit" der Antwort des Modells, abhängig von der gegebenen Prompt-Art
         - Welche Input-Features hat das Modell stark gewichtet, um auf die Antwort zu kommen?
-            - Die Auswertung der Input-Features erfolgt mittels der Technik ["SHAP"](https://www.geeksforgeeks.org/machine-learning/shap-a-comprehensive-guide-to-shapley-additive-explanations/) evaluieren (Es gibt [Paper](https://transformer-circuits.pub/2025/attribution-graphs/methods.html#graphs) über die Circuit-Tracing Technik, die sie dafür benutzt haben, aber ist ziemlich sicher overkill für dieses Projekt)
+            - Die Auswertung der Input-Features erfolgt mittels der Technik ["SHAP"](https://www.geeksforgeeks.org/machine-learning/shap-a-comprehensive-guide-to-shapley-additive-explanations/) evaluieren (Es gibt ein [Paper](https://transformer-circuits.pub/2025/attribution-graphs/methods.html#graphs) über die Circuit-Tracing Technik, die Anthropic dafür benutzt hat, aber das ist ziemlich sicher overkill für dieses Projekt)
             - Nachdem wir diese Infos haben lässt sich dann schauen, ob für das Modell einen unterschied macht, wenn eine Antwort mitgegeben wird und damit auch ob ein ähnlicher Effekt wie das von Anthropic beschriebene "Motivated Reasoning" vorhanden ist
 - Die Forschungsfrage könnte somit (beispielsweise) lauten: "Lässt sich ein ähnlicher Effekt, wie das von Anthropic beschriebene "Motivated Reasoning" auch in Modellen ohne CoT feststellen?"
