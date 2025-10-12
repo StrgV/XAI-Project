@@ -8,7 +8,7 @@
     - Unfaithful CoTs können in zwei Fälle unterschieden werden
         1. "Bullshitting" - Das Modell liefert eine falsche Antwort (Modell halluziniert mehr oder weniger die Antwort)
         2. **Wichtig für dieses Projekt** "Motivated Reasoning" - Das Modell Arbeitet von einer vorgeschlagenen Antwort des Nutzers ausgehend Rückwärts (Evaluierbar über die Gewichtung der Input-Features), um seine Antwort zu begründen
-    - Da CoT Reasoning nur mit ziemlich großen Modellen wie Claude 3.5 Haiku (sinvoll) funktioniert, wird das Untersuchungsziel etwas abgeändert
+    - Da CoT Reasoning nur mit ziemlich großen Modellen wie Claude 3.5 Haiku (sinnvoll) funktioniert, wird das Untersuchungsziel etwas abgeändert
 - Wir schauen uns an, ob ähnliche Effekte auch bei Modellen ohne CoT Reasoning auftreten
     - Vorschlag für ein [Untersuchungs-Modell](https://huggingface.co/openai-community/gpt2-large)
 - Das Projekt und Vorgehen:
