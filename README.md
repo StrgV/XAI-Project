@@ -10,7 +10,7 @@
         2. **Wichtig für dieses Projekt** "Motivated Reasoning" - Das Modell Arbeitet von einer vorgeschlagenen Antwort des Nutzers ausgehend Rückwärts (Evaluierbar über die Gewichtung der Input-Features), um seine Antwort zu begründen
     - Da CoT Reasoning nur mit ziemlich großen Modellen wie Claude 3.5 Haiku (sinnvoll) funktioniert, wird das Untersuchungsziel etwas abgeändert
 - Wir schauen uns an, ob ähnliche Effekte auch bei Modellen ohne CoT Reasoning auftreten
-    - Vorschlag für ein [Untersuchungs-Modell](https://huggingface.co/openai-community/gpt2-large)
+    - Vorschlag für ein [Untersuchungs-Modell (Bert)](https://huggingface.co/google-bert/bert-base-uncased)
 - Das Projekt und Vorgehen:
     - Wir geben dem Modell verschiedene Arten von Prompts:
         1. Prompt bei dem keine Antwort vorgegeben ist
