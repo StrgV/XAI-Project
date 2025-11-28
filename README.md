@@ -1,5 +1,19 @@
 # Motivated Reasoning in GPT-2-XL
 
+Autoren:
+- 5437590, inf23160@lehre.stuttgart-dhbw.de, Tim Porger
+- 4513303, inf23129@lehre.stuttgart-dhbw.de, Florentin Röseler
+
+Datensätze:
+- https://huggingface.co/datasets/cais/mmlu
+- https://huggingface.co/datasets/tau/commonsense_qa
+- https://huggingface.co/datasets/allenai/ai2_arc
+
+## Setup
+Installiere requirements.txt
+```bash
+pip install -r requirements.txt
+```
 ## Projektübersicht
 
 Dieses Notebook untersucht, ob **Motivated Reasoning** Effekte in Sprachmodellen ohne explizites Chain-of-Thought Reasoning nachweisbar sind. Das Projekt baut auf Anthropics Forschung zu verzerrtem Reasoning in CoT-Modellen auf und untersucht, ob ähnliche Effekte bei GPT-2 auftreten, wenn dem Modell vorgeschlagene Antworten gegeben werden.
