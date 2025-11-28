@@ -4,6 +4,9 @@ Autoren:
 - 5437590, inf23160@lehre.stuttgart-dhbw.de, Tim Porger
 - 4513303, inf23129@lehre.stuttgart-dhbw.de, Florentin Röseler
 
+GitHub repo:
+https://github.com/StrgV/XAI-Project
+
 Datensätze:
 - https://huggingface.co/datasets/cais/mmlu
 - https://huggingface.co/datasets/tau/commonsense_qa
