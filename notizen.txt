@@ -1,3 +1,0 @@
-Jeder model.generate() Call ist komplett unabhängig. Das Modell hat kein "Gedächtnis" zwischen den Aufrufen - es sieht nur den aktuellen Prompt, nicht die vorherigen.
-Das funktioniert so nur, weil GPT-2 kein Chat-Modell ist. Bei jedem Call wird nur der eine Prompt verarbeitet, ohne Kontext zu vorherigen Generierungen.
-✅ Du kannst alle drei Bedingungen sicher nacheinander mit derselben Frage testen.
