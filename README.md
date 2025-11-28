@@ -1,24 +1,26 @@
-# Idee
+# Motivated Reasoning in GPT-2-XL
 
-- Die Idee ist angelehnt an Kapitel 11 (Chain-of-thought Faithfulness) dieses [Anthropic Papers](https://transformer-circuits.pub/2025/attribution-graphs/biology.html#dives-cot)
-    - Hier wird Reasoning von Modellen (CoT) auf "Faithfulness" untersucht
-    - Also: "Führt das Modell die Schritte, welche es durch die CoT darlegt auch tatsächlich so aus?"
-- Folgende interessante Ergebnisse:
-    - "Faithful Reasoning" - Das Reasoning wird korrekt durchgeführt und die Antwort stimmt ebenfalls
-    - Unfaithful CoTs können in zwei Fälle unterschieden werden
-        1. "Bullshitting" - Das Modell liefert eine falsche Antwort (Modell halluziniert mehr oder weniger die Antwort)
-        2. **Wichtig für dieses Projekt** "Motivated Reasoning" - Das Modell Arbeitet von einer vorgeschlagenen Antwort des Nutzers ausgehend Rückwärts (Evaluierbar über die Gewichtung der Input-Features), um seine Antwort zu begründen
-    - Da CoT Reasoning nur mit ziemlich großen Modellen wie Claude 3.5 Haiku (sinnvoll) funktioniert, wird das Untersuchungsziel etwas abgeändert
-- Wir schauen uns an, ob ähnliche Effekte auch bei Modellen ohne CoT Reasoning auftreten
-    - Vorschlag für ein [Untersuchungs-Modell (Bert)](https://huggingface.co/google-bert/bert-base-uncased)
-- Das Projekt und Vorgehen:
-    - Wir geben dem Modell verschiedene Arten von Prompts:
-        1. Prompt bei dem keine Antwort vorgegeben ist
-        2. Prompt bei dem die Antwort vorgegeben und richtig ist
-        3. Prompt bei dem die Antwort vorgegeben und falsch ist
-    - Basierend auf den Antworten des Modells können dann verschiedene Daten evaluiert werden 
-        - "Richtigkeit" der Antwort des Modells, abhängig von der gegebenen Prompt-Art
-        - Welche Input-Features hat das Modell stark gewichtet, um auf die Antwort zu kommen?
-            - Die Auswertung der Input-Features erfolgt mittels der Technik ["SHAP"](https://www.geeksforgeeks.org/machine-learning/shap-a-comprehensive-guide-to-shapley-additive-explanations/) evaluieren (Es gibt ein [Paper](https://transformer-circuits.pub/2025/attribution-graphs/methods.html#graphs) über die Circuit-Tracing Technik, die Anthropic dafür benutzt hat, aber das ist ziemlich sicher overkill für dieses Projekt)
-            - Nachdem wir diese Infos haben lässt sich dann schauen, ob für das Modell einen unterschied macht, wenn eine Antwort mitgegeben wird und damit auch ob ein ähnlicher Effekt wie das von Anthropic beschriebene "Motivated Reasoning" vorhanden ist
-- Die Forschungsfrage könnte somit (beispielsweise) lauten: "Lässt sich ein ähnlicher Effekt, wie das von Anthropic beschriebene "Motivated Reasoning" auch in Modellen ohne CoT feststellen?"
+## Projektübersicht
+
+Dieses Notebook untersucht, ob **Motivated Reasoning** Effekte in Sprachmodellen ohne explizites Chain-of-Thought Reasoning nachweisbar sind. Das Projekt baut auf Anthropics Forschung zu verzerrtem Reasoning in CoT-Modellen auf und untersucht, ob ähnliche Effekte bei GPT-2 auftreten, wenn dem Modell vorgeschlagene Antworten gegeben werden.
+
+### Forschungsfrage
+Lässt sich ein ähnlicher Effekt, wie das von Anthropic beschriebene "Motivated Reasoning" auch in Modellen ohne CoT feststellen?
+
+### Experimentelles Design
+
+Wir testen drei Bedingungen:
+1. **Neutral**: Keine Antwortvorschläge (Baseline)
+2. **Correct Suggestion**: Dem Modell wird die korrekte Antwort vorgeschlagen
+3. **Wrong Suggestion**: Dem Modell wird eine falsche Antwort vorgeschlagen
+
+### Analysemethoden
+
+1. **Accuracy-Analyse**: Wie oft antwortet das Modell in jeder Bedingung korrekt?
+2. **Logit Lens**: Wie entwickeln sich die Wahrscheinlichkeiten für verschiedene Antworten über die Layers hinweg?
+3. **Attention Maps**: Wie verteilt das Modell seine Aufmerksamkeit bei verschiedenen Vorschlägen?
+
+### Datensätze
+- **MMLU** (Massive Multitask Language Understanding)
+- **CommonsenseQA** (Common Sense Reasoning)
+- **ARC-easy** (AI2 Reasoning Challenge)
