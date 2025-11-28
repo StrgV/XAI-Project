@@ -9,7 +9,6 @@ __pycache__/
 # picture
 *.png
 *.csv
-*.txt
 *.pkl
 
 # Distribution / packaging
