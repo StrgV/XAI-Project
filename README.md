@@ -41,3 +41,7 @@ Wir testen drei Bedingungen:
 - **MMLU** (Massive Multitask Language Understanding)
 - **CommonsenseQA** (Common Sense Reasoning)
 - **ARC-easy** (AI2 Reasoning Challenge)
+
+---
+
+Die restliche Dokumentation befindet sich im Jupyter-Notebook.
