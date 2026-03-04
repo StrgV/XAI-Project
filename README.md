@@ -1,8 +1,8 @@
-# Motivated Reasoning in GPT-2-XL
+# GPT2XL-Sycophancy-Research
 
 Autoren:
-- 5437590, inf23160@lehre.stuttgart-dhbw.de, Tim Porger
-- 4513303, inf23129@lehre.stuttgart-dhbw.de, Florentin Röseler
+- Tim P. (@StrgV)
+- Florentin R. (@florentinroeseler)
 
 GitHub repo:
 https://github.com/StrgV/XAI-Project
